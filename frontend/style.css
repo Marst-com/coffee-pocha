@@ -247,14 +247,26 @@ body {
     0 -10px 35px rgba(75,45,25,.06);
 }
 
-
 .game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   width: auto;
   max-width: 700px;
 
   min-width: 0;
-
   flex: 0 1 auto;
+}
+
+.section-title {
+  width: 100%;
+  justify-content: center;
+}
+
+.game-slider {
+  width: 100%;
+  justify-content: center;
 }
 
 .section-title {
