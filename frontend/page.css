@@ -1,17 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #fff8ef;
+  color: #3b2418;
+}
+
 .sub-page {
   min-height: 100vh;
-  overflow: auto;
-
-  background:
-    radial-gradient(circle at top, #fff4e4, #f4e8ff);
 }
 
 .page {
   width: min(700px, 92%);
   min-height: 100vh;
 
-  margin: auto;
-  padding: 30px 0;
+  margin: 0 auto;
+  padding: 40px 0;
 
   display: flex;
   flex-direction: column;
@@ -22,17 +36,18 @@
 }
 
 .back {
-  position: absolute;
-  top: 25px;
-  left: 25px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
 
   padding: 10px 16px;
 
   border-radius: 12px;
 
+  background: #ffffff;
+  color: #3b2418;
+
   text-decoration: none;
-  color: #4d3428;
-  background: white;
 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -53,87 +68,31 @@
 
 .main-action,
 .click-button {
-  margin-top: 35px;
+  margin-top: 30px;
 
   border: none;
   border-radius: 18px;
 
   padding: 16px 30px;
 
+  background: #5d3a28;
+  color: white;
+
   font-size: 18px;
   font-weight: bold;
 
   cursor: pointer;
-
-  background: #5d3a28;
-  color: white;
-
-  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .main-action:hover,
 .click-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.main-action:active,
-.click-button:active {
-  transform: scale(0.95);
+  transform: translateY(-2px);
 }
 
 .result {
-  margin-top: 25px;
   min-height: 30px;
+  margin-top: 25px;
 
   font-size: 20px;
   font-weight: bold;
-}
-
-.count {
-  margin-top: 25px;
-
-  font-size: 70px;
-  font-weight: 900;
-}
-
-.click-button {
-  width: 220px;
-  height: 100px;
-
-  font-size: 30px;
-}
-
-.maze {
-  position: relative;
-
-  width: min(500px, 90vw);
-  height: 300px;
-
-  margin-top: 30px;
-
-  border: 5px solid #5d3a28;
-  border-radius: 15px;
-
-  background:
-    linear-gradient(90deg, transparent 49%, #5d3a28 50%, transparent 51%),
-    linear-gradient(0deg, transparent 49%, #5d3a28 50%, transparent 51%);
-
-  overflow: hidden;
-}
-
-#player {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-
-  font-size: 30px;
-}
-
-#goal {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-
-  font-size: 30px;
 }
