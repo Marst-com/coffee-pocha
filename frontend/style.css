@@ -13,208 +13,210 @@ body {
 body {
   font-family: Arial, "Noto Sans KR", sans-serif;
   color: #3b2418;
-  background: #fff8ef;
+  background: #fffaf5;
   overflow: hidden;
 }
 
-/* =========================
+/* =================================================
    HERO
-========================= */
+================================================= */
 
 .hero {
+  position: relative;
   width: 100%;
   height: 50vh;
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,255,255,.45) 28%,
+      transparent 65%
+    ),
+    linear-gradient(
+      145deg,
+      #ffe7ca 0%,
+      #f8e1d0 45%,
+      #eadcff 100%
+    );
+}
+
+/* 위쪽 작은 정보 */
+
+.hero-top {
+  position: absolute;
+  top: 18px;
+  left: 28px;
+  right: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(75, 49, 38, .65);
+
+  letter-spacing: .5px;
+}
+
+/* 중앙 콘텐츠 */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(720px, 90%);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   text-align: center;
 
-  background:
-    radial-gradient(
-      circle at center,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0.35) 35%,
-      transparent 65%
-    ),
-    linear-gradient(135deg, #ffe8cd, #f3d9ff);
+  transform: translateY(-3%);
 }
 
 .coffee-icon {
-  font-size: clamp(50px, 8vw, 90px);
-  margin-bottom: 10px;
+  width: 76px;
+  height: 76px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 8px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.62);
+
+  box-shadow:
+    0 12px 35px rgba(91, 54, 30, .12),
+    inset 0 1px rgba(255,255,255,.8);
+
+  font-size: 45px;
 }
 
 .hero h1 {
-  font-size: clamp(40px, 7vw, 80px);
+  font-size: clamp(42px, 7vw, 76px);
   font-weight: 900;
-  letter-spacing: -3px;
+  letter-spacing: -5px;
+  line-height: 1;
 }
 
 .hero p {
-  margin-top: 15px;
+  margin-top: 14px;
 
-  font-size: clamp(14px, 2vw, 21px);
   color: #74584b;
+
+  font-size: clamp(14px, 2vw, 19px);
+  line-height: 1.55;
 }
 
+/* =================================================
+   EVENT BANNER
+================================================= */
+
+.event-banner {
+  position: relative;
+
+  width: min(620px, 100%);
+  min-height: 66px;
+
+  margin-top: 22px;
+  padding: 11px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  border: 1px solid rgba(120, 80, 50, .12);
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.82);
+
+  box-shadow:
+    0 10px 30px rgba(80,45,20,.09),
+    inset 0 1px rgba(255,255,255,.9);
+
+  text-align: left;
+}
+
+.event-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  background: #fff0d8;
+
+  font-size: 22px;
+}
+
+.event-text {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.event-text strong {
+  font-size: 13px;
+}
+
+.event-text span {
+  color: #8b7367;
+  font-size: 11px;
+}
+
+.event-badge {
+  flex-shrink: 0;
+
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  background: #5d3a28;
+  color: white;
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* =================================================
+   GAMES
+================================================= */
+
 .games {
+  position: relative;
+  z-index: 3;
+
   width: 100%;
   height: 25vh;
 
   display: flex;
   align-items: center;
 
-  gap: 40px;
-  padding: 18px 30px;
+  gap: 38px;
+
+  padding: 17px 30px;
 
   overflow-x: auto;
   overflow-y: hidden;
 
-  background: #fff;
-}
-
-.game-section {
-  flex-shrink: 0;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  margin-bottom: 10px;
-}
-
-.section-title > span {
-  font-size: 25px;
-}
-
-.section-title h2 {
-  font-size: 16px;
-}
-
-.section-title p {
-  font-size: 11px;
-  color: #92796a;
-}
-
-.game-list {
-  display: flex;
-  gap: 12px;
-}
-
-.game-card {
-  width: 145px;
-  height: 115px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 4px;
-
-  border: 2px solid #ead8c8;
-  border-radius: 18px;
-
-  background: #fff8ef;
-
-  color: #3b2418;
-  text-decoration: none;
-
-  box-shadow: 0 6px 15px rgba(80, 45, 20, .08);
-
-  transition:
-    transform .15s,
-    box-shadow .15s;
-}
-
-.game-card:hover {
-  transform: translateY(-6px) scale(1.02);
-
-  box-shadow:
-    0 14px 25px rgba(80, 45, 20, .16);
-}
-
-.game-card:active {
-  transform: scale(.95);
-}
-
-.game-card.coffee {
-  background: #f7efff;
-  border-color: #d9c2f2;
-}
-
-.game-icon {
-  font-size: 30px;
-}
-
-.game-card strong {
-  font-size: 14px;
-}
-
-.game-card small {
-  font-size: 10px;
-  color: #92796a;
-}
-
-/* =========================
-   IEUM
-========================= */
-
-.ieum {
-  width: 100%;
-  height: 25vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  background: #241a2e;
-  color: #ffffff;
-}
-
-.ieum-logo {
-  font-size: clamp(35px, 6vw, 65px);
-  font-weight: 900;
-  letter-spacing: 8px;
-}
-
-.ieum p {
-  margin-top: 8px;
-  color: #d9cce2;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .games {
-    padding: 15px;
-    gap: 12px;
-  }
-
-  .game-button {
-    flex: 0 0 160px;
-
-    width: 160px;
-    height: 105px;
-  }
-
-}
-
-@media (max-width: 850px) {
-  .games {
-    justify-content: flex-start;
-  }
-}
+ 
