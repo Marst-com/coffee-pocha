@@ -2,70 +2,141 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>버튼 누르기 - 커피포차</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../page.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>10초 버튼</title>
+
+  <link
+    rel="stylesheet"
+    href="../page.css"
+  >
 </head>
 
-<body class="sub-page">
+<body>
 
-  <main class="page">
-    <a href="../index.html" class="back">← 메인으로</a>
+  <main class="sub-page">
 
-    <div class="page-icon">⚡</div>
+    <a
+      href="../index.html"
+      class="back"
+    >
+      ← 커피포차
+    </a>
 
-    <h1>버튼 누르기</h1>
-    <p>10초 동안 버튼을 최대한 많이 눌러보세요!</p>
 
-    <div id="count" class="count">0</div>
+    <section class="page">
 
-    <button id="clickButton" class="click-button">
-      누르기!
-    </button>
+      <div class="page-icon">
+        ⚡
+      </div>
 
-    <p id="status" class="result"></p>
+      <h1>10초 버튼</h1>
+
+      <p>
+        10초 동안 최대한 많이 클릭하세요!
+      </p>
+
+
+      <div id="timer">
+        10.00
+      </div>
+
+
+      <button
+        id="clickButton"
+        class="click-button"
+        type="button"
+      >
+        CLICK!
+      </button>
+
+
+      <div class="result">
+
+        클릭:
+        <strong id="score">
+          0
+        </strong>
+
+        회
+
+      </div>
+
+
+      <button
+        id="startButton"
+        class="main-action"
+        type="button"
+      >
+        게임 시작
+      </button>
+
+
+      <div
+        id="nameArea"
+        hidden
+      >
+
+        <h2>
+          🎉 성공!
+        </h2>
+
+        <p>
+          커피를 받을 이름을 입력해주세요.
+        </p>
+
+        <input
+          id="nameInput"
+          type="text"
+          maxlength="30"
+          placeholder="예: XX이맘"
+          autocomplete="off"
+        >
+
+        <button
+          id="receiveButton"
+          class="main-action"
+          type="button"
+        >
+          ☕ 커피 받기
+        </button>
+
+      </div>
+
+
+      <div
+        id="completeArea"
+        hidden
+      >
+
+        <h2>
+          ☕ 커피 획득!
+        </h2>
+
+        <p id="completeText"></p>
+
+        <a
+          href="../index.html"
+          class="main-action"
+        >
+          커피포차로 돌아가기
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <script>
-    let count = 0;
-    let playing = false;
-    let timer;
 
-    const countElement = document.getElementById("count");
-    const button = document.getElementById("clickButton");
-    const status = document.getElementById("status");
-
-    button.addEventListener("click", () => {
-      if (!playing) {
-        startGame();
-        return;
-      }
-
-      count++;
-      countElement.textContent = count;
-    });
-
-    function startGame() {
-      playing = true;
-      count = 0;
-
-      countElement.textContent = "0";
-      status.textContent = "10초 시작!";
-
-      timer = setTimeout(() => {
-        playing = false;
-
-        if (count >= 30) {
-          status.textContent =
-            `성공! ${count}회 → ☕ 커피 획득!`;
-        } else {
-          status.textContent =
-            `${count}회 → 아쉽지만 커피 획득 실패!`;
-        }
-      }, 10000);
-    }
-  </script>
+  <script
+    type="module"
+    src="./button-game.js"
+  ></script>
 
 </body>
 </html>
