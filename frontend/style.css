@@ -70,6 +70,7 @@ body {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 18px;
   padding: 20px 30px;
@@ -108,7 +109,6 @@ body {
     box-shadow 0.15s ease,
     border-color 0.15s ease;
 }
-
 .game-button span {
   font-size: 32px;
 }
