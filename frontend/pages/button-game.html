@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버튼 누르기 - 커피포차</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../page.css">
+</head>
+
+<body class="sub-page">
+
+  <main class="page">
+    <a href="../index.html" class="back">← 메인으로</a>
+
+    <div class="page-icon">⚡</div>
+
+    <h1>버튼 누르기</h1>
+    <p>10초 동안 버튼을 최대한 많이 눌러보세요!</p>
+
+    <div id="count" class="count">0</div>
+
+    <button id="clickButton" class="click-button">
+      누르기!
+    </button>
+
+    <p id="status" class="result"></p>
+  </main>
+
+  <script>
+    let count = 0;
+    let playing = false;
+    let timer;
+
+    const countElement = document.getElementById("count");
+    const button = document.getElementById("clickButton");
+    const status = document.getElementById("status");
+
+    button.addEventListener("click", () => {
+      if (!playing) {
+        startGame();
+        return;
+      }
+
+      count++;
+      countElement.textContent = count;
+    });
+
+    function startGame() {
+      playing = true;
+      count = 0;
+
+      countElement.textContent = "0";
+      status.textContent = "10초 시작!";
+
+      timer = setTimeout(() => {
+        playing = false;
+
+        if (count >= 30) {
+          status.textContent =
+            `성공! ${count}회 → ☕ 커피 획득!`;
+        } else {
+          status.textContent =
+            `${count}회 → 아쉽지만 커피 획득 실패!`;
+        }
+      }, 10000);
+    }
+  </script>
+
+</body>
+</html>
