@@ -26,20 +26,204 @@
   </main>
 
   <script>
-    const fortunes = [
-      "오늘은 좋은 일이 생길 가능성이 높아요! 🍀",
-      "뜻밖의 행운이 찾아올지도 몰라요! ✨",
-      "오늘은 새로운 사람과 친해지기 좋은 날이에요!",
-      "작은 선택이 큰 즐거움을 가져올 수 있어요!",
-      "오늘의 행운 아이템은 커피입니다! ☕"
-    ];
+    <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    function showFortune() {
-      const result =
-        fortunes[Math.floor(Math.random() * fortunes.length)];
+  <title>오늘의 운세 - 커피포차</title>
 
-      document.getElementById("result").textContent = result;
+  <link rel="stylesheet" href="../page.css">
+</head>
+
+<body class="sub-page">
+
+  <main class="page">
+
+    <a href="../index.html" class="back">
+      ← 메인으로
+    </a>
+
+    <div class="page-icon">🔮</div>
+
+    <h1>오늘의 운세</h1>
+
+    <p>
+      생년월일 또는 타로로 오늘의 운세를 확인해보세요.
+    </p>
+
+    <div class="fortune-menu">
+
+      <button class="fortune-option" onclick="showBirthday()">
+        🎂
+        <strong>생년월일 운세</strong>
+        <small>생년월일을 입력해보세요</small>
+      </button>
+
+      <button class="fortune-option" onclick="showTarot()">
+        🃏
+        <strong>타로</strong>
+        <small>카드를 뽑아보세요</small>
+      </button>
+
+    </div>
+
+    <section id="birthdayBox" class="fortune-box hidden">
+
+      <h2>🎂 생년월일 운세</h2>
+
+      <input
+        type="date"
+        id="birthDate"
+      >
+
+      <button
+        class="main-action"
+        onclick="calculateBirthdayFortune()"
+      >
+        운세 보기
+      </button>
+
+    </section>
+
+    <section id="tarotBox" class="fortune-box hidden">
+
+      <h2>🃏 오늘의 타로</h2>
+
+      <p>
+        마음속으로 질문을 하나 생각한 뒤 카드를 뽑아보세요.
+      </p>
+
+      <button
+        class="main-action"
+        onclick="drawTarot()"
+      >
+        카드 뽑기
+      </button>
+
+    </section>
+
+    <div id="result" class="result"></div>
+
+  </main>
+
+  <script>
+
+    const birthdayBox =
+      document.getElementById("birthdayBox");
+
+    const tarotBox =
+      document.getElementById("tarotBox");
+
+    const result =
+      document.getElementById("result");
+
+
+    function showBirthday() {
+
+      birthdayBox.classList.remove("hidden");
+      tarotBox.classList.add("hidden");
+
+      result.textContent = "";
+
     }
+
+
+    function showTarot() {
+
+      tarotBox.classList.remove("hidden");
+      birthdayBox.classList.add("hidden");
+
+      result.textContent = "";
+
+    }
+
+
+    function calculateBirthdayFortune() {
+
+      const date =
+        document.getElementById("birthDate").value;
+
+      if (!date) {
+        result.textContent =
+          "생년월일을 먼저 입력해주세요!";
+        return;
+      }
+
+      const timestamp =
+        new Date(date).getTime();
+
+      const fortunes = [
+
+        "오늘은 새로운 일을 시작하기 좋은 날이에요! ✨",
+
+        "주변 사람에게서 좋은 소식이 찾아올 수 있어요. 🍀",
+
+        "오늘은 작은 행운을 발견할 가능성이 높아요! ☕",
+
+        "평소보다 집중력이 좋아지는 날이에요. 🎯",
+
+        "오늘은 천천히 생각하고 행동하면 좋은 결과가 있어요. 🌟",
+
+        "뜻밖의 즐거운 일이 생길지도 몰라요! 🎉"
+
+      ];
+
+      const index =
+        Math.abs(timestamp / 86400000) %
+        fortunes.length;
+
+      result.textContent =
+        fortunes[Math.floor(index)];
+
+    }
+
+
+    function drawTarot() {
+
+      const cards = [
+
+        {
+          name: "The Sun ☀️",
+          text: "밝고 긍정적인 에너지가 들어오는 카드예요."
+        },
+
+        {
+          name: "The Star ⭐",
+          text: "희망과 새로운 가능성을 의미하는 카드예요."
+        },
+
+        {
+          name: "The Magician 🪄",
+          text: "자신의 능력을 활용할 기회가 생길 수 있어요."
+        },
+
+        {
+          name: "The World 🌎",
+          text: "하나의 일이 마무리되고 새로운 단계로 넘어가는 카드예요."
+        },
+
+        {
+          name: "The Fool 🎒",
+          text: "새로운 도전을 시작하는 것을 상징하는 카드예요."
+        },
+
+        {
+          name: "The Moon 🌙",
+          text: "서두르지 말고 상황을 조금 더 살펴보는 것이 좋아요."
+        }
+
+      ];
+
+      const card =
+        cards[Math.floor(Math.random() * cards.length)];
+
+      result.innerHTML =
+        `<strong>${card.name}</strong><br>${card.text}`;
+
+    }
+
   </script>
 
 </body>
