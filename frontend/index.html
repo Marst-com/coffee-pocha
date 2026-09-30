@@ -2,10 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>커피포차</title>
 
@@ -15,7 +12,7 @@
 <body>
 
   <!-- =========================
-       상단 50%
+       상단 HERO
   ========================== -->
 
   <section class="hero">
@@ -31,9 +28,7 @@
         ☕
       </div>
 
-      <h1>
-        커피포차
-      </h1>
+      <h1>커피포차</h1>
 
       <p>
         재미있는 체험을 하고<br>
@@ -48,6 +43,7 @@
 
         <div class="event-text">
           <strong>오늘의 특별 이벤트</strong>
+
           <span>
             게임에 도전하고 커피를 획득해보세요!
           </span>
@@ -65,7 +61,7 @@
 
 
   <!-- =========================
-       게임 25%
+       게임 영역
   ========================== -->
 
   <section class="games">
@@ -88,65 +84,75 @@
       </div>
 
 
-      <div class="game-list">
+      <div class="game-slider">
 
-        <!-- 운세 -->
-
-        <a
-          href="./pages/fortune.html"
-          class="game-card"
+        <button
+          class="game-nav prev"
+          type="button"
+          aria-label="이전 게임"
         >
-
-          <span class="game-icon">
-            🔮
-          </span>
-
-          <strong>
-            오늘의 운세
-          </strong>
-
-          <small>
-            타로 · 생년월일
-          </small>
-
-          <span class="game-tag fun">
-            FUN
-          </span>
-
-        </a>
+          ‹
+        </button>
 
 
-        <!-- 행운 -->
+        <div class="game-viewport">
 
-        <a
-          href="./pages/luck.html"
-          class="game-card"
+          <div class="game-list">
+
+            <a
+              href="./pages/fortune.html"
+              class="game-card"
+            >
+              <span class="game-icon">🔮</span>
+
+              <strong>오늘의 운세</strong>
+
+              <small>
+                타로 · 생년월일
+              </small>
+
+              <span class="game-tag fun">
+                FUN
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/luck.html"
+              class="game-card"
+            >
+              <span class="game-icon">🍀</span>
+
+              <strong>행운 뽑기</strong>
+
+              <small>
+                오늘의 행운은?
+              </small>
+
+              <span class="game-tag fun">
+                FUN
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="game-nav next"
+          type="button"
+          aria-label="다음 게임"
         >
-
-          <span class="game-icon">
-            🍀
-          </span>
-
-          <strong>
-            행운 뽑기
-          </strong>
-
-          <small>
-            오늘의 행운은?
-          </small>
-
-          <span class="game-tag fun">
-            FUN
-          </span>
-
-        </a>
+          ›
+        </button>
 
       </div>
 
     </div>
 
 
-    <!-- 커피획득게임 -->
+    <!-- 커피 획득 게임 -->
 
     <div class="game-section coffee-section">
 
@@ -158,7 +164,10 @@
 
         <div>
           <h2>커피획득게임</h2>
-          <p>성공하면 커피를 받아요!</p>
+
+          <p>
+            성공하면 커피를 받아요!
+          </p>
         </div>
 
         <div class="coffee-count">
@@ -168,266 +177,212 @@
       </div>
 
 
-      <div class="game-list">
+      <div class="game-slider">
 
-        <!-- 미로 -->
-
-        <a
-          href="./pages/maze.html"
-          class="game-card coffee"
+        <button
+          class="game-nav prev"
+          type="button"
+          aria-label="이전 게임"
         >
-
-          <span class="game-icon">
-            🌀
-          </span>
-
-          <strong>
-            미로 탈출
-          </strong>
-
-          <small>
-            탈출 성공 → ☕
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
+          ‹
+        </button>
 
 
-        <!-- 버튼 -->
+        <div class="game-viewport">
 
-        <a
-          href="./pages/button-game.html"
-          class="game-card coffee"
+          <div class="game-list">
+
+            <a
+              href="./pages/maze.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🌀</span>
+
+              <strong>미로 탈출</strong>
+
+              <small>
+                탈출 성공 → ☕
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/button-game.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">⚡</span>
+
+              <strong>10초 버튼</strong>
+
+              <small>
+                최대한 많이!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/timing.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🎯</span>
+
+              <strong>타이밍</strong>
+
+              <small>
+                정확하게 클릭!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/balloon.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🎈</span>
+
+              <strong>풍선 터뜨리기</strong>
+
+              <small>
+                전부 터뜨려라!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/memory.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🧠</span>
+
+              <strong>기억력 게임</strong>
+
+              <small>
+                짝을 찾아라!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/number.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🔢</span>
+
+              <strong>숫자 순서</strong>
+
+              <small>
+                1부터 순서대로!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/mole.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🐹</span>
+
+              <strong>두더지 잡기</strong>
+
+              <small>
+                나오자마자 클릭!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/bomb.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">💣</span>
+
+              <strong>폭탄 피하기</strong>
+
+              <small>
+                살아남아라!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/reaction.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🏓</span>
+
+              <strong>반응속도</strong>
+
+              <small>
+                몇 ms?
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+
+            <a
+              href="./pages/coin.html"
+              class="game-card coffee"
+            >
+              <span class="game-icon">🪙</span>
+
+              <strong>코인 줍기</strong>
+
+              <small>
+                코인을 모아라!
+              </small>
+
+              <span class="game-tag coffee-tag">
+                COFFEE
+              </span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="game-nav next"
+          type="button"
+          aria-label="다음 게임"
         >
-
-          <span class="game-icon">
-            ⚡
-          </span>
-
-          <strong>
-            10초 버튼
-          </strong>
-
-          <small>
-            최대한 많이!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 타이밍 -->
-
-        <a
-          href="./pages/timing.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🎯
-          </span>
-
-          <strong>
-            타이밍
-          </strong>
-
-          <small>
-            정확하게 클릭!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 풍선 -->
-
-        <a
-          href="./pages/balloon.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🎈
-          </span>
-
-          <strong>
-            풍선 터뜨리기
-          </strong>
-
-          <small>
-            전부 터뜨려라!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 기억력 -->
-
-        <a
-          href="./pages/memory.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🧠
-          </span>
-
-          <strong>
-            기억력 게임
-          </strong>
-
-          <small>
-            짝을 찾아라!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 숫자 -->
-
-        <a
-          href="./pages/number.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🔢
-          </span>
-
-          <strong>
-            숫자 순서
-          </strong>
-
-          <small>
-            1부터 순서대로!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 두더지 -->
-
-        <a
-          href="./pages/mole.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🐹
-          </span>
-
-          <strong>
-            두더지 잡기
-          </strong>
-
-          <small>
-            나오자마자 클릭!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 폭탄 -->
-
-        <a
-          href="./pages/bomb.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            💣
-          </span>
-
-          <strong>
-            폭탄 피하기
-          </strong>
-
-          <small>
-            살아남아라!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 반응속도 -->
-
-        <a
-          href="./pages/reaction.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🏓
-          </span>
-
-          <strong>
-            반응속도
-          </strong>
-
-          <small>
-            몇 ms?
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
-
-
-        <!-- 코인 -->
-
-        <a
-          href="./pages/coin.html"
-          class="game-card coffee"
-        >
-
-          <span class="game-icon">
-            🪙
-          </span>
-
-          <strong>
-            코인 줍기
-          </strong>
-
-          <small>
-            코인을 모아라!
-          </small>
-
-          <span class="game-tag coffee-tag">
-            COFFEE
-          </span>
-
-        </a>
+          ›
+        </button>
 
       </div>
 
@@ -437,7 +392,7 @@
 
 
   <!-- =========================
-       IEUM 25%
+       IEUM
   ========================== -->
 
   <section class="ieum">
