@@ -7,8 +7,10 @@
 html,
 body {
   width: 100%;
-  max-width: 100%;
   height: 100%;
+  max-width: 100%;
+
+  overflow: hidden;
 }
 
 body {
@@ -19,8 +21,6 @@ body {
 
   color: #3b2418;
   background: #fffaf5;
-
-  overflow: hidden;
 }
 
 
@@ -129,7 +129,7 @@ body {
 
 
 /* =========================================================
-   EVENT BANNER
+   EVENT
 ========================================================= */
 
 .event-banner {
@@ -144,11 +144,13 @@ body {
 
   gap: 13px;
 
-  border: 1px solid rgba(100,70,50,.12);
+  border:
+    1px solid rgba(100,70,50,.12);
 
   border-radius: 18px;
 
-  background: rgba(255,255,255,.78);
+  background:
+    rgba(255,255,255,.78);
 
   box-shadow:
     0 12px 32px rgba(82,52,34,.08);
@@ -211,7 +213,7 @@ body {
 
 
 /* =========================================================
-   GAME AREA
+   GAMES
 ========================================================= */
 
 .games {
@@ -227,11 +229,11 @@ body {
   align-items: center;
   justify-content: center;
 
-  gap: clamp(25px, 4vw, 60px);
+  gap: clamp(30px, 5vw, 70px);
 
   padding:
     20px
-    clamp(15px, 3vw, 50px);
+    clamp(15px, 4vw, 60px);
 
   overflow: hidden;
 
@@ -247,31 +249,41 @@ body {
     0 -10px 35px rgba(75,45,25,.06);
 }
 
-.game-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-  width: auto;
-  max-width: 700px;
+/* =========================================================
+   GAME SECTION
+========================================================= */
+
+.game-section {
+  /*
+    핵심:
+    두 섹션을 같은 크기로 늘리지 않고
+    각각 자기 콘텐츠 크기를 기준으로 잡는다.
+  */
+
+  width: min(620px, 100%);
 
   min-width: 0;
-  flex: 0 1 auto;
+
+  flex: 0 1 620px;
+
+  /*
+    섹션 자체를 중앙 기준으로 유지
+  */
+
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+/* 제목 */
 
 .section-title {
   width: 100%;
-  justify-content: center;
-}
 
-.game-slider {
-  width: 100%;
-  justify-content: center;
-}
-
-.section-title {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 10px;
 
@@ -328,7 +340,7 @@ body {
 
 
 /* =========================================================
-   GAME SLIDER
+   SLIDER
 ========================================================= */
 
 .game-slider {
@@ -339,12 +351,10 @@ body {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 10px;
 }
-
-
-/* 카드가 실제로 움직이는 창 */
 
 .game-viewport {
   width: auto;
@@ -356,9 +366,6 @@ body {
 
   overflow: hidden;
 }
-
-
-/* 카드 전체 */
 
 .game-list {
   width: max-content;
@@ -374,7 +381,7 @@ body {
 
 
 /* =========================================================
-   NAV BUTTON
+   NAVIGATION BUTTON
 ========================================================= */
 
 .game-nav {
@@ -415,6 +422,7 @@ body {
   font-family: Arial, sans-serif;
 
   font-size: 30px;
+
   font-weight: 300;
 
   line-height: 1;
@@ -468,7 +476,8 @@ body {
 
   gap: 4px;
 
-  border: 1px solid #eadfd8;
+  border:
+    1px solid #eadfd8;
 
   border-radius: 19px;
 
@@ -637,7 +646,7 @@ body {
 }
 
 .ieum-logo {
-  font-size: clamp(35px, 5vw, 56px);
+  font-size: clamp(35px,5vw,56px);
 
   font-weight: 900;
 
@@ -668,11 +677,13 @@ body {
 
   padding: 7px 14px;
 
-  border: 1px solid rgba(255,255,255,.13);
+  border:
+    1px solid rgba(255,255,255,.13);
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,.07);
+  background:
+    rgba(255,255,255,.07);
 
   color: #eee6f2;
 
@@ -706,24 +717,17 @@ body {
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
   .games {
-    gap: 30px;
+    gap: 25px;
 
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .game-section {
-    min-width: 0;
-  }
-
-  .game-nav {
-    width: 40px;
-    height: 40px;
-
-    flex-basis: 40px;
+    flex-basis: 560px;
   }
 }
 
@@ -732,26 +736,22 @@ body {
    SMALL TABLET
 ========================================================= */
 
-@media (max-width: 750px) {
-
-  .hero-top {
-    left: 18px;
-    right: 18px;
-  }
-
-  .hero-top > span:last-child {
-    display: none;
-  }
+@media (max-width: 850px) {
 
   .games {
-    gap: 25px;
+    gap: 20px;
 
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .game-slider {
-    gap: 8px;
+  .game-section {
+    flex-basis: 500px;
+  }
+
+  .game-card {
+    width: 132px;
+    flex-basis: 132px;
   }
 
   .game-nav {
@@ -764,34 +764,6 @@ body {
   .game-nav span {
     font-size: 27px;
   }
-
-  .game-card {
-    width: 132px;
-
-    flex-basis: 132px;
-  }
-}
-
-
-@media (max-width: 700px) {
-  .games {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .game-section {
-    width: 100%;
-    max-width: 520px;
-    align-items: center;
-  }
-
-  .section-title {
-    justify-content: center;
-  }
-
-  .game-slider {
-    justify-content: center;
-  }
 }
 
 
@@ -799,102 +771,73 @@ body {
    MOBILE
 ========================================================= */
 
-@media (max-width: 560px) {
+@media (max-width: 700px) {
 
-  .hero h1 {
-    letter-spacing: -3px;
+  .hero-top {
+    left: 18px;
+    right: 18px;
   }
 
-  .coffee-icon {
-    width: 66px;
-    height: 66px;
-
-    font-size: 38px;
-  }
-
-  .event-banner {
-    margin-top: 17px;
-
-    padding: 10px 12px;
-  }
-
-  .event-badge {
+  .hero-top > span:last-child {
     display: none;
   }
 
 
-  /* 모바일 게임 영역 */
+  /*
+    모바일에서는 두 섹션을 세로로 배치
+  */
 
   .games {
-    width: 100%;
+    flex-direction: column;
 
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
 
     padding:
-      18px
       12px;
   }
 
   .game-section {
-    min-width: 0;
+    width: 100%;
+    max-width: 520px;
+
+    flex: 0 1 auto;
+
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section-title {
-    gap: 8px;
+    justify-content: center;
+
+    margin-bottom: 7px;
   }
-
-  .section-title-icon {
-    width: 32px;
-    height: 32px;
-
-    font-size: 17px;
-  }
-
-  .section-title h2 {
-    font-size: 14px;
-  }
-
-  .section-title p {
-    font-size: 8px;
-  }
-
-  .coffee-count {
-    margin-left: auto;
-
-    padding: 4px 7px;
-
-    font-size: 8px;
-  }
-
-
-  /* 핵심:
-     버튼 + viewport + 버튼이
-     화면 안에 항상 들어오게 함 */
 
   .game-slider {
-    width: 100%;
-    max-width: 100%;
+    justify-content: center;
 
     gap: 7px;
+  }
+
+  .game-viewport {
+    width: 0;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
   }
 
   .game-nav {
     width: 36px;
     height: 36px;
 
-    flex: 0 0 36px;
+    flex-basis: 36px;
   }
 
   .game-nav span {
-    font-size: 26px;
-  }
-
-  .game-viewport {
-    flex: 1 1 0;
-
-    width: 0;
-    min-width: 0;
-    max-width: none;
+    font-size: 25px;
   }
 
   .game-card {
@@ -916,6 +859,15 @@ body {
     font-size: 8px;
   }
 
+  .event-banner {
+    margin-top: 17px;
+
+    padding: 10px 12px;
+  }
+
+  .event-badge {
+    display: none;
+  }
 
   .ieum-decoration {
     display: none;
@@ -934,8 +886,8 @@ body {
 @media (max-width: 380px) {
 
   .games {
-    padding-left: 9px;
-    padding-right: 9px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .game-slider {
@@ -954,9 +906,9 @@ body {
   }
 
   .game-card {
-    width: 122px;
+    width: 120px;
     height: 102px;
 
-    flex-basis: 122px;
+    flex-basis: 120px;
   }
 }
