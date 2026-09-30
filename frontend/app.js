@@ -1,13 +1,15 @@
 "use strict";
 
-/*
- * 커피포차
- * 게임 목록 이동 기능
- */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const sliders = document.querySelectorAll(".game-slider");
+  /*
+   * 각 게임 슬라이더 독립적으로 동작
+   */
+
+  const sliders =
+    document.querySelectorAll(".game-slider");
+
 
   sliders.forEach((slider) => {
 
@@ -37,9 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let position = 0;
 
 
-    /* 카드 하나의 실제 이동 거리 */
+    /*
+     * 카드 하나가 이동할 거리
+     */
 
-    const getStep = () => {
+    function getStep() {
 
       const card =
         list.querySelector(".game-card");
@@ -48,48 +52,52 @@ document.addEventListener("DOMContentLoaded", () => {
         return 0;
       }
 
+
       const styles =
         window.getComputedStyle(list);
+
 
       const gap =
         parseFloat(styles.gap) || 0;
 
+
       return card.offsetWidth + gap;
-    };
+    }
 
 
-    /* 최대 이동 거리 */
+    /*
+     * 최대 이동 거리
+     */
 
-    const getMaxPosition = () => {
+    function getMaxPosition() {
 
       return Math.max(
         0,
         list.scrollWidth -
         viewport.clientWidth
       );
-    };
+    }
 
 
-    /* 화면 업데이트 */
+    /*
+     * UI 업데이트
+     */
 
-    const update = () => {
+    function update() {
 
-      const maxPosition =
+      const max =
         getMaxPosition();
 
 
       position =
         Math.max(
           0,
-          Math.min(
-            position,
-            maxPosition
-          )
+          Math.min(position, max)
         );
 
 
       list.style.transform =
-        `translateX(-${position}px)`;
+        `translate3d(-${position}px, 0, 0)`;
 
 
       prev.disabled =
@@ -97,11 +105,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       next.disabled =
-        position >= maxPosition - 1;
-    };
+        position >= max - 1;
+    }
 
 
-    /* 이전 */
+    /*
+     * 이전
+     *
+     * 한 번에 2장
+     */
 
     prev.addEventListener(
       "click",
@@ -110,15 +122,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const step =
           getStep();
 
+
         position -=
           step * 2;
+
 
         update();
       }
     );
 
 
-    /* 다음 */
+    /*
+     * 다음
+     */
 
     next.addEventListener(
       "click",
@@ -127,21 +143,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const step =
           getStep();
 
+
         position +=
           step * 2;
+
 
         update();
       }
     );
 
 
-    /* 화면 크기 변경 */
+    /*
+     * 창 크기 변경
+     */
 
     window.addEventListener(
       "resize",
       update
     );
 
+
+    /*
+     * 처음 상태
+     */
 
     update();
 
