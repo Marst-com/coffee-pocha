@@ -11,17 +11,18 @@ body {
 }
 
 body {
-  overflow: hidden;
   font-family: Arial, "Noto Sans KR", sans-serif;
-  background: #fff8ef;
   color: #3b2418;
+  background: #fff8ef;
+  overflow: hidden;
 }
 
 /* =========================
-   상단 50%
+   HERO
 ========================= */
 
 .hero {
+  width: 100%;
   height: 50vh;
 
   display: flex;
@@ -32,8 +33,13 @@ body {
   text-align: center;
 
   background:
-    radial-gradient(circle at 50% 35%, #fff 0%, transparent 35%),
-    linear-gradient(135deg, #ffe9cf, #f7d7ff);
+    radial-gradient(
+      circle at center,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.35) 35%,
+      transparent 65%
+    ),
+    linear-gradient(135deg, #ffe8cd, #f3d9ff);
 }
 
 .coffee-icon {
@@ -48,33 +54,36 @@ body {
 }
 
 .hero p {
-  margin-top: 14px;
+  margin-top: 15px;
+
   font-size: clamp(14px, 2vw, 21px);
   color: #74584b;
 }
 
 /* =========================
-   게임 영역 25%
+   GAMES
 ========================= */
 
 .games {
+  width: 100%;
   height: 25vh;
 
   display: flex;
   align-items: center;
-  gap: 18px;
 
+  gap: 18px;
   padding: 20px 30px;
 
   overflow-x: auto;
   overflow-y: hidden;
 
-  background: #fff;
+  background: #ffffff;
 }
 
 .game-button {
   flex: 0 0 190px;
 
+  width: 190px;
   height: 120px;
 
   display: flex;
@@ -84,13 +93,13 @@ body {
 
   gap: 5px;
 
+  border: 2px solid #ead8c8;
   border-radius: 22px;
 
-  text-decoration: none;
-  color: #3b2418;
-
   background: #fff8ef;
-  border: 2px solid #ead8c8;
+
+  color: #3b2418;
+  text-decoration: none;
 
   box-shadow: 0 8px 20px rgba(80, 45, 20, 0.08);
 
@@ -109,10 +118,74 @@ body {
 }
 
 .game-button small {
-  color: #92796a;
   font-size: 12px;
+  color: #92796a;
 }
 
 .game-button:hover {
   transform: translateY(-5px);
-  border-color: #b987
+
+  border-color: #b98765;
+
+  box-shadow:
+    0 14px 28px rgba(80, 45, 20, 0.15);
+}
+
+.game-button:active {
+  transform: scale(0.96);
+}
+
+.coffee-game {
+  background: #f5ecff;
+  border-color: #d9c2f2;
+}
+
+/* =========================
+   IEUM
+========================= */
+
+.ieum {
+  width: 100%;
+  height: 25vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #241a2e;
+  color: #ffffff;
+}
+
+.ieum-logo {
+  font-size: clamp(35px, 6vw, 65px);
+  font-weight: 900;
+  letter-spacing: 8px;
+}
+
+.ieum p {
+  margin-top: 8px;
+  color: #d9cce2;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .games {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .game-button {
+    flex: 0 0 160px;
+
+    width: 160px;
+    height: 105px;
+  }
+
+}
