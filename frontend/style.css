@@ -11,7 +11,10 @@ body {
 }
 
 body {
-  font-family: Arial, "Noto Sans KR", sans-serif;
+  font-family:
+    Arial,
+    "Noto Sans KR",
+    sans-serif;
 
   color: #3b2418;
   background: #fffaf5;
@@ -38,102 +41,98 @@ body {
 
   background:
     radial-gradient(
-      circle at 50% 35%,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.45) 28%,
-      transparent 65%
+      circle at 50% 32%,
+      #ffffff 0%,
+      rgba(255,255,255,.72) 18%,
+      rgba(255,255,255,0) 60%
     ),
     linear-gradient(
-      145deg,
-      #ffe7ca 0%,
-      #f8e1d0 45%,
-      #eadcff 100%
+      135deg,
+      #ffe7cc,
+      #f9e1d5 48%,
+      #eaddf7
     );
 }
 
 
-/* 상단 정보 */
+/* 위쪽 작은 정보 */
 
 .hero-top {
   position: absolute;
 
-  top: 18px;
-  left: 28px;
-  right: 28px;
+  top: 20px;
+  left: 32px;
+  right: 32px;
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
+  color: #80675a;
 
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
 
-  color: rgba(75,49,38,.65);
+  letter-spacing: .4px;
+}
 
-  letter-spacing: .5px;
+.brand-mini {
+  color: #5f4638;
 }
 
 
 /* 중앙 */
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-
-  width: min(720px, 90%);
+  width: min(700px, 90%);
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   text-align: center;
-
-  transform: translateY(-3%);
 }
 
 
 /* 커피 */
 
 .coffee-icon {
-  width: 76px;
-  height: 76px;
+  width: 78px;
+  height: 78px;
 
   display: grid;
   place-items: center;
 
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 
-  border-radius: 24px;
+  border-radius: 25px;
 
   background: rgba(255,255,255,.62);
 
   box-shadow:
-    0 12px 35px rgba(91,54,30,.12),
-    inset 0 1px rgba(255,255,255,.8);
+    0 14px 35px rgba(82,52,34,.11),
+    inset 0 1px rgba(255,255,255,.9);
 
-  font-size: 45px;
+  font-size: 44px;
 }
 
 
 /* 제목 */
 
 .hero h1 {
-  font-size: clamp(42px, 7vw, 76px);
+  font-size: clamp(43px, 7vw, 76px);
 
   font-weight: 900;
 
-  letter-spacing: -5px;
-
   line-height: 1;
+
+  letter-spacing: -5px;
 }
 
 
-/* 설명 */
-
 .hero p {
-  margin-top: 14px;
+  margin-top: 15px;
 
-  color: #74584b;
+  color: #765d50;
 
   font-size: clamp(14px, 2vw, 19px);
 
@@ -142,38 +141,39 @@ body {
 
 
 /* =================================================
-   EVENT
+   EVENT BANNER
 ================================================= */
 
 .event-banner {
-  width: min(620px, 100%);
-  min-height: 66px;
+  width: min(600px, 100%);
 
-  margin-top: 22px;
-  padding: 11px 15px;
+  margin-top: 23px;
+
+  padding: 12px 15px;
 
   display: flex;
   align-items: center;
 
   gap: 13px;
 
-  border: 1px solid rgba(120,80,50,.12);
+  border:
+    1px solid rgba(100,70,50,.12);
 
   border-radius: 18px;
 
-  background: rgba(255,255,255,.82);
+  background:
+    rgba(255,255,255,.78);
 
   box-shadow:
-    0 10px 30px rgba(80,45,20,.09),
-    inset 0 1px rgba(255,255,255,.9);
+    0 12px 32px rgba(82,52,34,.08);
 
   text-align: left;
 }
 
 
 .event-icon {
-  width: 43px;
-  height: 43px;
+  width: 44px;
+  height: 44px;
 
   flex-shrink: 0;
 
@@ -182,15 +182,13 @@ body {
 
   border-radius: 13px;
 
-  background: #fff0d8;
+  background: #fff0d9;
 
   font-size: 22px;
 }
 
 
 .event-text {
-  min-width: 0;
-
   flex: 1;
 
   display: flex;
@@ -206,20 +204,18 @@ body {
 
 
 .event-text span {
-  color: #8b7367;
+  color: #8b7366;
 
   font-size: 11px;
 }
 
 
 .event-badge {
-  flex-shrink: 0;
-
-  padding: 6px 9px;
+  padding: 6px 10px;
 
   border-radius: 999px;
 
-  background: #5d3a28;
+  background: #684632;
 
   color: white;
 
@@ -231,12 +227,12 @@ body {
 
 
 /* =================================================
-   GAMES
+   GAME AREA
 ================================================= */
 
 .games {
   position: relative;
-  z-index: 3;
+  z-index: 5;
 
   width: 100%;
   height: 25vh;
@@ -244,88 +240,90 @@ body {
   display: flex;
   align-items: center;
 
-  gap: 35px;
+  gap: clamp(30px, 5vw, 80px);
 
-  padding: 15px 30px;
+  padding:
+    20px
+    clamp(25px, 7vw, 100px);
 
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      180deg,
-      #fffaf5 0%,
-      #ffffff 25%,
-      #ffffff 100%
-    );
+  background: #fff;
 
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
+  border-radius:
+    30px
+    30px
+    0
+    0;
 
   box-shadow:
-    0 -12px 35px rgba(84,52,30,.07);
+    0 -10px 35px rgba(75,45,25,.06);
 }
 
+
+/* 게임 섹션 */
 
 .game-section {
   flex-shrink: 0;
-
-  min-width: 0;
 }
 
 
-/* 제목 */
+/* 섹션 제목 */
 
 .section-title {
   display: flex;
   align-items: center;
 
-  gap: 9px;
+  gap: 10px;
 
-  margin-bottom: 9px;
+  margin-bottom: 11px;
 }
 
 
 .section-title-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 
   display: grid;
   place-items: center;
 
-  border-radius: 10px;
+  border-radius: 11px;
 
   background: #fff2e4;
 
-  font-size: 17px;
+  font-size: 18px;
+}
+
+
+.coffee-icon-small {
+  background: #f0e7fa;
 }
 
 
 .section-title h2 {
   font-size: 15px;
-
-  line-height: 1.1;
 }
 
 
 .section-title p {
   margin-top: 3px;
 
-  color: #9a8275;
+  color: #998075;
 
   font-size: 9px;
 }
 
 
 .coffee-count {
-  margin-left: 4px;
+  margin-left: 5px;
 
-  padding: 5px 8px;
+  padding: 5px 9px;
 
   border-radius: 999px;
 
-  background: #eee3f8;
+  background: #eee4f8;
 
-  color: #765399;
+  color: #78569a;
 
   font-size: 9px;
 
@@ -334,45 +332,50 @@ body {
 
 
 /* =================================================
-   GAME SLIDER
+   SLIDER
 ================================================= */
 
 .game-slider {
   display: flex;
   align-items: center;
 
-  gap: 8px;
+  gap: 14px;
 }
 
 
-/* 보이는 부분 */
+/*
+   화면이 넓어도 무조건 꽉 채우지 않음.
+   카드 몇 개만 보여주고 여유 공간을 남김.
+*/
 
 .game-viewport {
-  width: 560px;
+  width: 570px;
 
   overflow: hidden;
 }
 
 
-/* 카드 줄 */
-
 .game-list {
-  display: flex;
-
-  gap: 10px;
-
   width: max-content;
 
+  display: flex;
+
+  gap: 12px;
+
   transition:
-    transform .35s cubic-bezier(.2,.8,.2,1);
+    transform .38s cubic-bezier(.2,.8,.2,1);
 }
 
 
-/* 이동 버튼 */
+/* =================================================
+   NAVIGATION BUTTON
+================================================= */
 
 .game-nav {
-  width: 34px;
-  height: 55px;
+  position: relative;
+
+  width: 42px;
+  height: 42px;
 
   flex-shrink: 0;
 
@@ -381,37 +384,54 @@ body {
 
   border: none;
 
-  border-radius: 13px;
+  border-radius: 50%;
 
-  background: #f4eee9;
+  background: #ffffff;
 
-  color: #60483b;
-
-  font-size: 30px;
-
-  line-height: 1;
+  color: #654b3e;
 
   cursor: pointer;
 
   box-shadow:
-    0 4px 12px rgba(80,45,20,.07);
+    0 5px 18px rgba(75,45,25,.13),
+    0 0 0 1px rgba(100,70,50,.08);
 
   transition:
-    background .15s,
-    transform .15s,
-    opacity .15s;
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease,
+    opacity .18s ease;
+}
+
+
+.game-nav span {
+  display: block;
+
+  margin-top: -3px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 30px;
+
+  font-weight: 300;
+
+  line-height: 1;
 }
 
 
 .game-nav:hover {
-  background: #eaded5;
+  background: #fff8f1;
 
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.06);
+
+  box-shadow:
+    0 8px 22px rgba(75,45,25,.18),
+    0 0 0 1px rgba(100,70,50,.12);
 }
 
 
 .game-nav:active {
-  transform: scale(.92);
+  transform: scale(.91);
 }
 
 
@@ -419,6 +439,9 @@ body {
   opacity: .25;
 
   cursor: default;
+
+  box-shadow:
+    0 2px 7px rgba(75,45,25,.05);
 
   transform: none;
 }
@@ -431,8 +454,8 @@ body {
 .game-card {
   position: relative;
 
-  width: 134px;
-  height: 108px;
+  width: 138px;
+  height: 110px;
 
   flex-shrink: 0;
 
@@ -444,15 +467,16 @@ body {
 
   gap: 4px;
 
-  border: 1px solid #eadcd1;
+  border:
+    1px solid #eadfd8;
 
-  border-radius: 18px;
+  border-radius: 19px;
 
   background:
     linear-gradient(
       145deg,
-      #fffdfb,
-      #fff7ef
+      #ffffff,
+      #fff8f1
     );
 
   color: #3b2418;
@@ -460,7 +484,7 @@ body {
   text-decoration: none;
 
   box-shadow:
-    0 5px 16px rgba(80,45,20,.07);
+    0 5px 15px rgba(70,45,30,.06);
 
   transition:
     transform .18s ease,
@@ -472,10 +496,10 @@ body {
 .game-card:hover {
   transform: translateY(-5px);
 
-  border-color: #c8a68d;
+  border-color: #cbb19f;
 
   box-shadow:
-    0 13px 25px rgba(80,45,20,.13);
+    0 13px 27px rgba(70,45,30,.12);
 }
 
 
@@ -484,27 +508,27 @@ body {
 }
 
 
-/* 커피 게임 */
+/* 커피 카드 */
 
 .game-card.coffee {
   background:
     linear-gradient(
       145deg,
-      #fcf8ff,
-      #f5ecff
+      #ffffff,
+      #f7efff
     );
 
-  border-color: #dfcceb;
+  border-color: #e1d3eb;
 }
 
 
 .game-card.coffee:hover {
-  border-color: #b999ce;
+  border-color: #bba0ce;
 }
 
 
 .game-icon {
-  font-size: 28px;
+  font-size: 29px;
 
   line-height: 1;
 }
@@ -516,7 +540,7 @@ body {
 
 
 .game-card small {
-  color: #927b70;
+  color: #927c71;
 
   font-size: 9px;
 }
@@ -537,6 +561,8 @@ body {
   font-size: 7px;
 
   font-weight: 900;
+
+  letter-spacing: .4px;
 }
 
 
@@ -548,9 +574,9 @@ body {
 
 
 .game-tag.coffee-tag {
-  background: #e9ddf4;
+  background: #ebe0f4;
 
-  color: #78569b;
+  color: #78569a;
 }
 
 
@@ -574,41 +600,45 @@ body {
     linear-gradient(
       180deg,
       #ffffff 0%,
-      #f8f1fb 8%,
-      #eee5f2 20%,
-      #30233a 75%,
-      #241a2d 100%
+      #f8f1fb 12%,
+      #e9deef 27%,
+      #3b2a45 75%,
+      #261c30 100%
     );
 
   color: white;
 }
 
 
-/* 상단 연결 */
+/* 빛 */
 
-.ieum::before {
-  content: "";
-
+.ieum-glow {
   position: absolute;
 
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 420px;
+  height: 180px;
 
-  height: 55px;
+  left: 50%;
+  top: 5px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
 
   background:
-    linear-gradient(
-      to bottom,
-      #ffffff,
-      rgba(255,255,255,0)
+    radial-gradient(
+      ellipse,
+      rgba(255,255,255,.35),
+      rgba(255,255,255,0) 70%
     );
+
+  filter: blur(5px);
 
   pointer-events: none;
 }
 
 
-/* IEUM 콘텐츠 */
+/* 콘텐츠 */
 
 .ieum-content {
   position: relative;
@@ -621,42 +651,54 @@ body {
 
   text-align: center;
 
-  margin-top: 12px;
+  transform: translateY(8px);
 }
 
 
 .ieum-logo {
-  font-size: clamp(34px,5vw,55px);
+  font-size: clamp(35px,5vw,56px);
 
   font-weight: 900;
 
-  letter-spacing: 8px;
+  letter-spacing: 9px;
+}
 
-  opacity: .95;
+
+.ieum-line {
+  width: 42px;
+  height: 2px;
+
+  margin-top: 8px;
+
+  border-radius: 99px;
+
+  background: rgba(255,255,255,.35);
 }
 
 
 .ieum-content p {
-  margin-top: 3px;
+  margin-top: 8px;
 
-  color: #d9cce1;
+  color: #d9cee0;
 
   font-size: 12px;
 }
 
 
 .ieum-coffee {
-  margin-top: 10px;
+  margin-top: 11px;
 
-  padding: 7px 13px;
+  padding: 7px 14px;
 
-  border: 1px solid rgba(255,255,255,.12);
+  border:
+    1px solid rgba(255,255,255,.13);
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,.07);
+  background:
+    rgba(255,255,255,.07);
 
-  color: #eee5f3;
+  color: #eee6f2;
 
   font-size: 9px;
 }
@@ -669,127 +711,131 @@ body {
 
   color: white;
 
-  font-size: 65px;
+  font-size: 60px;
 
-  opacity: .055;
+  opacity: .045;
 
   user-select: none;
 }
 
 
 .ieum-decoration.left {
-  left: 13%;
-  top: 28%;
+  left: 12%;
+  top: 30%;
 }
 
 
 .ieum-decoration.right {
-  right: 13%;
-  bottom: 18%;
+  right: 12%;
+  bottom: 20%;
 }
 
 
 /* =================================================
-   MOBILE
+   RESPONSIVE
 ================================================= */
 
-@media (max-width: 850px) {
-
-  .hero-top {
-    left: 16px;
-    right: 16px;
-  }
-
-  .hero-content {
-    width: 92%;
-  }
-
-  .event-banner {
-    margin-top: 17px;
-  }
+@media (max-width: 1000px) {
 
   .games {
-    gap: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
 
-    padding-left: 14px;
-    padding-right: 14px;
+    gap: 35px;
   }
 
   .game-viewport {
-    width: min(55vw, 430px);
-  }
-
-  .game-nav {
-    width: 30px;
-  }
-
-  .ieum-decoration {
-    display: none;
+    width: 500px;
   }
 }
 
 
-@media (max-width: 520px) {
+@media (max-width: 750px) {
+
+  .hero-top {
+    left: 18px;
+    right: 18px;
+  }
+
+  .hero-top > span:last-child {
+    display: none;
+  }
+
+  .games {
+    padding:
+      18px
+      25px;
+
+    gap: 30px;
+  }
+
+  .game-viewport {
+    width: 430px;
+  }
+}
+
+
+@media (max-width: 560px) {
 
   .hero h1 {
     letter-spacing: -3px;
   }
 
-  .hero p {
-    margin-top: 10px;
-  }
-
-  .hero-top span:last-child {
-    display: none;
-  }
-
   .coffee-icon {
-    width: 65px;
-    height: 65px;
+    width: 66px;
+    height: 66px;
 
     font-size: 38px;
   }
 
   .event-banner {
-    min-height: 58px;
+    margin-top: 17px;
 
-    padding: 9px 11px;
-
-    border-radius: 15px;
-  }
-
-  .event-icon {
-    width: 38px;
-    height: 38px;
-
-    font-size: 19px;
-  }
-
-  .event-text span {
-    font-size: 10px;
+    padding: 10px 12px;
   }
 
   .event-badge {
     display: none;
   }
 
-  .game-viewport {
-    width: 220px;
+
+  .games {
+    padding:
+      18px
+      15px;
+
+    gap: 25px;
   }
 
-  .game-card {
-    width: 124px;
-    height: 104px;
+
+  .game-viewport {
+    width: 270px;
   }
+
 
   .game-nav {
-    width: 28px;
-    height: 50px;
-
-    font-size: 25px;
+    width: 38px;
+    height: 38px;
   }
 
+
+  .game-nav span {
+    font-size: 27px;
+  }
+
+
+  .game-card {
+    width: 128px;
+    height: 106px;
+  }
+
+
+  .ieum-decoration {
+    display: none;
+  }
+
+
   .ieum-logo {
-    letter-spacing: 6px;
+    letter-spacing: 7px;
   }
 }
