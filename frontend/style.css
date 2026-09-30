@@ -4,20 +4,6 @@
   padding: 0;
 }
 
-:root {
-  --coffee: #6f4528;
-  --coffee-light: #ead9c5;
-
-  --fun: #7657a8;
-  --fun-light: #eee8f8;
-
-  --background: #faf8f4;
-  --text: #29231e;
-  --muted: #81786f;
-
-  --border: rgba(60, 45, 30, 0.12);
-}
-
 html,
 body {
   width: 100%;
@@ -25,181 +11,88 @@ body {
 }
 
 body {
-  font-family:
-    Arial,
-    "Noto Sans KR",
-    sans-serif;
-
-  background: var(--background);
-  color: var(--text);
-
   overflow: hidden;
-}
-
-/* 전체 */
-
-.coffee-pocha {
-  width: 100%;
-  height: 100vh;
-
-  display: grid;
-
-  grid-template-rows:
-    50% 25% 25%;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  background: #fff8ef;
+  color: #3b2418;
 }
 
 /* =========================
-   HERO
+   상단 50%
 ========================= */
 
 .hero {
-  position: relative;
+  height: 50vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   text-align: center;
 
-  overflow: hidden;
-
   background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(255,255,255,0.9),
-      transparent 35%
-    ),
-    linear-gradient(
-      135deg,
-      #fffaf3,
-      #eadbc8
-    );
-}
-
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  width: 280px;
-  height: 280px;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,0.25);
-
-  right: -90px;
-  top: -90px;
-}
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  border-radius: 50%;
-
-  background: rgba(111,69,40,0.06);
-
-  left: -60px;
-  bottom: -60px;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
+    radial-gradient(circle at 50% 35%, #fff 0%, transparent 35%),
+    linear-gradient(135deg, #ffe9cf, #f7d7ff);
 }
 
 .coffee-icon {
-  font-size: clamp(42px, 7vw, 72px);
-
-  margin-bottom: 8px;
+  font-size: clamp(50px, 8vw, 90px);
+  margin-bottom: 10px;
 }
 
 .hero h1 {
-  font-size: clamp(34px, 6vw, 64px);
-
-  font-weight: 800;
-
-  letter-spacing: -2px;
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 900;
+  letter-spacing: -3px;
 }
 
 .hero p {
-  margin-top: 12px;
-
-  font-size: clamp(14px, 2vw, 19px);
-
-  line-height: 1.6;
-
-  color: var(--muted);
+  margin-top: 14px;
+  font-size: clamp(14px, 2vw, 21px);
+  color: #74584b;
 }
 
 /* =========================
-   GAME MENU
+   게임 영역 25%
 ========================= */
 
-.game-menu {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 16px;
-
-  min-width: 0;
-
-  background: #ffffff;
-
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.game-scroll {
-  width: 100%;
+.games {
+  height: 25vh;
 
   display: flex;
-
   align-items: center;
-  justify-content: center;
+  gap: 18px;
 
-  gap: 12px;
+  padding: 20px 30px;
 
   overflow-x: auto;
+  overflow-y: hidden;
 
-  scrollbar-width: none;
+  background: #fff;
 }
-
-.game-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* 버튼 */
 
 .game-button {
-  flex: 0 0 auto;
+  flex: 0 0 190px;
 
-  min-width: 145px;
-  height: 105px;
-
-  border: 1px solid var(--border);
-
-  border-radius: 20px;
-
-  background: white;
-
-  cursor: pointer;
+  height: 120px;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
-  gap: 4px;
+  gap: 5px;
+
+  border-radius: 22px;
+
+  text-decoration: none;
+  color: #3b2418;
+
+  background: #fff8ef;
+  border: 2px solid #ead8c8;
+
+  box-shadow: 0 8px 20px rgba(80, 45, 20, 0.08);
 
   transition:
     transform 0.15s ease,
@@ -207,135 +100,19 @@ body {
     border-color 0.15s ease;
 }
 
-.game-button:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,0.08);
+.game-button span {
+  font-size: 32px;
 }
 
-.game-button:active {
-  transform: scale(0.96);
+.game-button strong {
+  font-size: 18px;
 }
 
-/* 재미게임 */
-
-.game-button.fun {
-  background: var(--fun-light);
-
-  border-color:
-    rgba(118,87,168,0.16);
-}
-
-.game-button.fun:hover {
-  border-color:
-    rgba(118,87,168,0.4);
-}
-
-/* 커피획득 */
-
-.game-button.coffee {
-  background: var(--coffee-light);
-
-  border-color:
-    rgba(111,69,40,0.16);
-}
-
-.game-button.coffee:hover {
-  border-color:
-    rgba(111,69,40,0.4);
-}
-
-.game-icon {
-  font-size: 27px;
-}
-
-.game-name {
-  font-size: 15px;
-
-  font-weight: 700;
-}
-
-.game-category {
-  font-size: 11px;
-
-  opacity: 0.6;
-}
-
-/* =========================
-   IEUM
-========================= */
-
-.ieum-area {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      180deg,
-      #faf8f4,
-      #f3eee7
-    );
-}
-
-.ieum-mark {
-  opacity: 0.65;
-}
-
-.ieum-symbol {
-  font-size: clamp(28px, 5vw, 46px);
-
-  font-weight: 900;
-
-  letter-spacing: 8px;
-}
-
-.ieum-subtitle {
-  margin-top: 7px;
-
+.game-button small {
+  color: #92796a;
   font-size: 12px;
-
-  color: var(--muted);
-
-  letter-spacing: 1px;
 }
 
-/* =========================
-   모바일
-========================= */
-
-@media (max-width: 600px) {
-
-  .game-menu {
-    padding: 10px;
-  }
-
-  .game-scroll {
-    justify-content: flex-start;
-
-    gap: 8px;
-  }
-
-  .game-button {
-    min-width: 125px;
-    height: 92px;
-
-    border-radius: 16px;
-  }
-
-  .game-icon {
-    font-size: 23px;
-  }
-
-  .game-name {
-    font-size: 14px;
-  }
-
-  .hero p {
-    font-size: 13px;
-  }
-}
+.game-button:hover {
+  transform: translateY(-5px);
+  border-color: #b987
