@@ -227,11 +227,11 @@ body {
   align-items: center;
   justify-content: center;
 
-  gap: clamp(30px, 5vw, 70px);
+  gap: clamp(25px, 4vw, 60px);
 
   padding:
     20px
-    clamp(15px, 5vw, 70px);
+    clamp(15px, 3vw, 50px);
 
   overflow: hidden;
 
@@ -248,16 +248,13 @@ body {
 }
 
 
-/* =========================================================
-   GAME SECTION
-========================================================= */
-
 .game-section {
-  width: min(700px, 100%);
+  width: auto;
+  max-width: 700px;
 
   min-width: 0;
 
-  flex: 1 1 0;
+  flex: 0 1 auto;
 }
 
 .section-title {
