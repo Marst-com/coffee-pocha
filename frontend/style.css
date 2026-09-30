@@ -189,3 +189,9 @@ body {
   }
 
 }
+
+@media (max-width: 850px) {
+  .games {
+    justify-content: flex-start;
+  }
+}
