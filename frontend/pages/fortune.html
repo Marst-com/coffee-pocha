@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘의 운세 - 커피포차</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../page.css">
+</head>
+
+<body class="sub-page">
+
+  <main class="page">
+    <a href="../index.html" class="back">← 메인으로</a>
+
+    <div class="page-icon">🔮</div>
+
+    <h1>오늘의 운세</h1>
+    <p>오늘 당신에게 찾아올 운을 확인해보세요!</p>
+
+    <button class="main-action" onclick="showFortune()">
+      운세 확인하기
+    </button>
+
+    <div id="result" class="result"></div>
+  </main>
+
+  <script>
+    const fortunes = [
+      "오늘은 좋은 일이 생길 가능성이 높아요! 🍀",
+      "뜻밖의 행운이 찾아올지도 몰라요! ✨",
+      "오늘은 새로운 사람과 친해지기 좋은 날이에요!",
+      "작은 선택이 큰 즐거움을 가져올 수 있어요!",
+      "오늘의 행운 아이템은 커피입니다! ☕"
+    ];
+
+    function showFortune() {
+      const result =
+        fortunes[Math.floor(Math.random() * fortunes.length)];
+
+      document.getElementById("result").textContent = result;
+    }
+  </script>
+
+</body>
+</html>
