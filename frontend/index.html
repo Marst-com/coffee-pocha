@@ -3,115 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>커피포차</title>
-
   <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-  <main class="coffee-pocha">
 
-    <!-- 상단 50% -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="coffee-icon">☕</div>
+  <!-- 상단 배너 50% -->
+  <section class="hero">
+    <div class="coffee-icon">☕</div>
+    <h1>커피포차</h1>
+    <p>재미있는 체험을 하고 맛있는 커피도 받아가세요!</p>
+  </section>
 
-        <h1>커피포차</h1>
+  <!-- 게임 영역 25% -->
+  <section class="games">
+    <a href="./pages/fortune.html" class="game-button">
+      <span>🔮</span>
+      <strong>오늘의 운세</strong>
+      <small>재미게임</small>
+    </a>
 
-        <p>
-          재미있는 체험을 하고<br>
-          맛있는 커피도 받아가세요!
-        </p>
-      </div>
-    </section>
+    <a href="./pages/luck.html" class="game-button">
+      <span>🍀</span>
+      <strong>행운 뽑기</strong>
+      <small>재미게임</small>
+    </a>
 
-    <!-- 버튼 25% -->
-    <section class="game-menu">
+    <a href="./pages/maze.html" class="game-button coffee-game">
+      <span>🌀</span>
+      <strong>미로게임</strong>
+      <small>커피획득게임</small>
+    </a>
 
-      <div class="game-scroll">
+    <a href="./pages/button-game.html" class="game-button coffee-game">
+      <span>⚡</span>
+      <strong>버튼 누르기</strong>
+      <small>커피획득게임</small>
+    </a>
+  </section>
 
-        <!-- 재미게임 -->
-        <button
-          class="game-button fun"
-          data-game="fortune"
-        >
-          <span class="game-icon">🔮</span>
+  <!-- IEUM 25% -->
+  <section class="ieum">
+    <div class="ieum-logo">IEUM</div>
+    <p>함께 만드는 즐거움</p>
+  </section>
 
-          <span class="game-name">
-            오늘의 운세
-          </span>
-
-          <span class="game-category">
-            재미게임
-          </span>
-        </button>
-
-        <button
-          class="game-button fun"
-          data-game="luck"
-        >
-          <span class="game-icon">🍀</span>
-
-          <span class="game-name">
-            행운 뽑기
-          </span>
-
-          <span class="game-category">
-            재미게임
-          </span>
-        </button>
-
-        <!-- 커피획득게임 -->
-        <button
-          class="game-button coffee"
-          data-game="maze"
-        >
-          <span class="game-icon">🌀</span>
-
-          <span class="game-name">
-            미로게임
-          </span>
-
-          <span class="game-category">
-            커피획득
-          </span>
-        </button>
-
-        <button
-          class="game-button coffee"
-          data-game="button"
-        >
-          <span class="game-icon">👆</span>
-
-          <span class="game-name">
-            버튼 누르기
-          </span>
-
-          <span class="game-category">
-            커피획득
-          </span>
-        </button>
-
-      </div>
-
-    </section>
-
-    <!-- IEUM 25% -->
-    <footer class="ieum-area">
-
-      <div class="ieum-mark">
-        <div class="ieum-symbol">IEUM</div>
-
-        <div class="ieum-subtitle">
-          함께 만드는 즐거움
-        </div>
-      </div>
-
-    </footer>
-
-  </main>
-
-  <script src="./app.js"></script>
 </body>
 </html>
