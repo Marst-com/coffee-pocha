@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미로게임 - 커피포차</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../page.css">
+</head>
+
+<body class="sub-page">
+
+  <main class="page">
+    <a href="../index.html" class="back">← 메인으로</a>
+
+    <div class="page-icon">🌀</div>
+
+    <h1>미로게임</h1>
+    <p>미로를 탈출하면 커피를 획득할 수 있어요!</p>
+
+    <div id="maze" class="maze">
+      <div id="player">●</div>
+      <div id="goal">☕</div>
+    </div>
+
+    <p id="status" class="result">
+      게임을 준비 중...
+    </p>
+  </main>
+
+  <script>
+    // 임시 버전
+    // 이후 실제 미로 로직으로 교체
+
+    const status = document.getElementById("status");
+
+    setTimeout(() => {
+      status.textContent = "미로게임 준비 완료!";
+    }, 500);
+  </script>
+
+</body>
+</html>
