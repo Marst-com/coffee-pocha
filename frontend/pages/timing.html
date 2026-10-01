@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타이밍</title>
+  <link rel="stylesheet" href="../page.css">
+</head>
+<body>
+  <main class="sub-page">
+    <a href="../index.html" class="back">← 커피포차</a>
+
+    <section class="page">
+      <div class="page-icon">🎯</div>
+
+      <h1>타이밍</h1>
+      <p>정확한 순간에 버튼을 눌러보세요!</p>
+
+      <div id="target">
+        READY
+      </div>
+
+      <div id="status">
+        시작 버튼을 눌러주세요.
+      </div>
+
+      <div class="result">
+        오차: <strong id="score">-</strong> ms
+      </div>
+
+      <button id="startButton" class="main-action" type="button">
+        게임 시작
+      </button>
+
+      <div id="nameArea" hidden>
+        <h2>🎉 성공!</h2>
+        <p>커피를 받을 이름을 입력해주세요.</p>
+
+        <input
+          id="nameInput"
+          type="text"
+          maxlength="30"
+          placeholder="예: XX이맘"
+          autocomplete="off"
+        >
+
+        <button id="receiveButton" class="main-action" type="button">
+          ☕ 커피 받기
+        </button>
+      </div>
+
+      <div id="completeArea" hidden>
+        <h2>☕ 커피 획득!</h2>
+        <p id="completeText"></p>
+
+        <a href="../index.html" class="main-action">
+          커피포차로 돌아가기
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./timing.js"></script>
+</body>
+</html>
