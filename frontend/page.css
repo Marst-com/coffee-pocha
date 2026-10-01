@@ -658,3 +658,46 @@ body {
 #bombControls button:active {
   transform: scale(.9);
 }
+
+   #mazeControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+#mazeControls > div {
+  display: flex;
+  gap: 6px;
+}
+
+#mazeControls button {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 13px;
+
+  background: #684632;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 12px rgba(104, 70, 50, .18);
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    transform .08s ease,
+    background .12s ease;
+}
+
+#mazeControls button:active {
+  transform: scale(.88);
+  background: #79543e;
+}
