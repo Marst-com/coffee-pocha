@@ -3,41 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>미로게임 - 커피포차</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>미로 탈출</title>
   <link rel="stylesheet" href="../page.css">
 </head>
+<body>
+  <main class="sub-page">
+    <a href="../index.html" class="back">← 커피포차</a>
 
-<body class="sub-page">
+    <section class="page">
+      <div class="page-icon">🌀</div>
 
-  <main class="page">
-    <a href="../index.html" class="back">← 메인으로</a>
+      <h1>미로 탈출</h1>
+      <p>미로를 탈출하면 커피를 받을 수 있어요!</p>
 
-    <div class="page-icon">🌀</div>
+      <div id="maze"></div>
 
-    <h1>미로게임</h1>
-    <p>미로를 탈출하면 커피를 획득할 수 있어요!</p>
+      <div class="result">
+        이동: <strong id="moves">0</strong>회
+      </div>
 
-    <div id="maze" class="maze">
-      <div id="player">●</div>
-      <div id="goal">☕</div>
-    </div>
+      <button id="startButton" class="main-action" type="button">
+        게임 시작
+      </button>
 
-    <p id="status" class="result">
-      게임을 준비 중...
-    </p>
+      <div id="nameArea" hidden>
+        <h2>🎉 탈출 성공!</h2>
+        <p>커피를 받을 이름을 입력해주세요.</p>
+
+        <input
+          id="nameInput"
+          type="text"
+          maxlength="30"
+          placeholder="예: XX이맘"
+          autocomplete="off"
+        >
+
+        <button id="receiveButton" class="main-action" type="button">
+          ☕ 커피 받기
+        </button>
+      </div>
+
+      <div id="completeArea" hidden>
+        <h2>☕ 커피 획득!</h2>
+        <p id="completeText"></p>
+
+        <a href="../index.html" class="main-action">
+          커피포차로 돌아가기
+        </a>
+      </div>
+    </section>
   </main>
 
-  <script>
-    // 임시 버전
-    // 이후 실제 미로 로직으로 교체
-
-    const status = document.getElementById("status");
-
-    setTimeout(() => {
-      status.textContent = "미로게임 준비 완료!";
-    }, 500);
-  </script>
-
+  <script type="module" src="./maze.js"></script>
 </body>
 </html>
