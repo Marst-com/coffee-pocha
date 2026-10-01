@@ -178,3 +178,43 @@ receiveButton.addEventListener("click", async () => {
     receiveButton.textContent = "☕ 커피 받기";
   }
 });
+
+const controls = document.querySelector("#bombControls");
+
+controls.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+
+    if (!playing) return;
+
+    keys.add(
+      button.dataset.direction === "left"
+        ? "ArrowLeft"
+        : "ArrowRight"
+    );
+  });
+
+  button.addEventListener("pointerup", () => {
+    keys.delete(
+      button.dataset.direction === "left"
+        ? "ArrowLeft"
+        : "ArrowRight"
+    );
+  });
+
+  button.addEventListener("pointercancel", () => {
+    keys.delete(
+      button.dataset.direction === "left"
+        ? "ArrowLeft"
+        : "ArrowRight"
+    );
+  });
+
+  button.addEventListener("pointerleave", () => {
+    keys.delete(
+      button.dataset.direction === "left"
+        ? "ArrowLeft"
+        : "ArrowRight"
+    );
+  });
+});
