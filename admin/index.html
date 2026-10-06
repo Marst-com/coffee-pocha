@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>쿠폰 관리</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="wrap">
+  <section id="gate" class="gate noprint">
+    <h1>관리자</h1>
+    <form id="gf">
+      <input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN" aria-label="PIN">
+      <p class="err" id="gerr" role="alert"></p>
+      <button class="pri" style="width:100%">들어가기</button>
+    </form>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="noprint">
+      <h1 id="title">쿠폰 관리</h1>
+      <p class="sub" id="mode"></p>
+    </div>
+    <div class="print-head">
+      <h1 id="pTitle"></h1>
+      <p id="pTime"></p><p id="pCond"></p><p id="pSum"></p>
+    </div>
+
+    <div class="stats noprint" id="stats"></div>
+
+    <form class="panel noprint" id="rf">
+      <div class="row">
+        <input class="grow" id="rcode" inputmode="numeric" autocomplete="off" placeholder="쿠폰 코드 입력 또는 바코드 스캔 후 Enter" aria-label="쿠폰 코드">
+        <button class="pri">사용 처리</button>
+      </div>
+      <p class="msg" id="rmsg" role="status"></p>
+    </form>
+
+    <div class="panel noprint">
+      <div class="row">
+        <select id="fs" aria-label="상태"><option value="all">전체</option><option value="new">미사용</option><option value="used">사용 완료</option></select>
+        <select id="fg" aria-label="게임"><option value="all">모든 게임</option></select>
+        <input class="grow" id="fq" placeholder="이름 또는 코드 검색" aria-label="검색">
+      </div>
+      <div class="row" style="margin-top:8px">
+        <div class="seg" role="group" aria-label="보기 방식">
+          <button type="button" id="vt" aria-pressed="true">🎫 티켓</button>
+          <button type="button" id="vl" aria-pressed="false">▤ 표</button>
+        </div>
+        <span class="grow"></span>
+        <button id="xlsx" type="button">엑셀(.xlsx) 저장</button>
+        <button id="csv" type="button">CSV</button>
+        <button id="print" type="button" class="pri">인쇄</button>
+      </div>
+    </div>
+
+    <div id="tickets" class="tickets"></div>
+
+    <div class="tablebox" id="tablebox" hidden>
+      <table>
+        <thead><tr><th>#</th><th>이름</th><th>게임</th><th>점수</th><th>쿠폰코드</th><th>발급시간</th><th>사용여부</th><th class="noprint">처리</th></tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
