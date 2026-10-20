@@ -1,0 +1,90 @@
+:root{--ink:#1a1a1a;--line:#d7d3c8;--bg:#f2efe8;--tarp:#e8650a;--ok:#1f7a55;--edge:#2b2b2b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.4rem;margin:0 0 4px}
+.sub{color:#666;margin:0 0 16px}
+button,input,select{font:inherit}
+button{padding:8px 14px;border-radius:8px;border:1px solid #bbb;background:#fff;cursor:pointer}
+button.pri{background:var(--tarp);border-color:var(--tarp);color:#fff}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffb066;outline-offset:1px}
+input,select{padding:8px 10px;border-radius:8px;border:1px solid #bbb;background:#fff}
+.gate{max-width:320px;margin:20vh auto;text-align:center}
+.gate input{width:100%;margin:12px 0;text-align:center;font-size:1.3rem;letter-spacing:.3em}
+.err{color:#c0392b;min-height:1.3em;margin:0}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:110px}
+.stat b{display:block;font-size:1.5rem}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:12px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row .grow{flex:1;min-width:140px}
+.seg{display:inline-flex}
+.seg button{border-radius:0;margin-left:-1px}
+.seg button:first-child{border-radius:8px 0 0 8px;margin-left:0}
+.seg button:last-child{border-radius:0 8px 8px 0}
+.seg button[aria-pressed="true"]{background:#2a1200;color:#ffd23f;border-color:#2a1200}
+.msg{margin:8px 0 0;min-height:1.4em;font-weight:700}
+.msg.ok{color:var(--ok)}.msg.bad{color:#c0392b}
+
+/* 티켓 */
+.tickets{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+.tk{--r:10px;--stub:92px;position:relative;background:var(--edge);border-radius:14px;padding:1.5px;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  -webkit-mask:radial-gradient(circle at var(--stub) 0,#0000 var(--r),#000 calc(var(--r) + .5px)),radial-gradient(circle at var(--stub) 100%,#0000 var(--r),#000 calc(var(--r) + .5px));
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(circle at var(--stub) 0,#0000 var(--r),#000 calc(var(--r) + .5px)),radial-gradient(circle at var(--stub) 100%,#0000 var(--r),#000 calc(var(--r) + .5px));
+  mask-composite:intersect}
+.tk-in{display:grid;grid-template-columns:var(--stub) 1fr;min-height:112px;background:#fffdf7;border-radius:12.5px;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  -webkit-mask:radial-gradient(circle at calc(var(--stub) - 1.5px) -1.5px,#0000 calc(var(--r) + 1.5px),#000 calc(var(--r) + 2px)),radial-gradient(circle at calc(var(--stub) - 1.5px) calc(100% + 1.5px),#0000 calc(var(--r) + 1.5px),#000 calc(var(--r) + 2px));
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(circle at calc(var(--stub) - 1.5px) -1.5px,#0000 calc(var(--r) + 1.5px),#000 calc(var(--r) + 2px)),radial-gradient(circle at calc(var(--stub) - 1.5px) calc(100% + 1.5px),#0000 calc(var(--r) + 1.5px),#000 calc(var(--r) + 2px));
+  mask-composite:intersect}
+.stub{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px 6px;border-right:2px dashed #8a8579;text-align:center;background:#ffe9cf}
+.stub .no{font-size:.75rem;color:#7a5a30}
+.stub b{font-size:1.7rem;line-height:1.1;font-family:"Jua","Gowun Dodum",sans-serif;font-weight:400}
+.stub .st{margin-top:4px;font-size:.78rem;font-weight:700;padding:1px 8px;border-radius:99px;background:#dff3ea;color:var(--ok);border:1px solid var(--ok)}
+.tk.used .tk-in{background:#ecebe6}
+.tk.used .stub{background:#dcdad3}
+.tk.used .stub .st{background:#fff;color:#555;border-color:#777}
+.body{padding:10px 14px;min-width:0}
+.body h3{margin:0;font-size:1.15rem;line-height:1.3;word-break:break-all}
+.body .gm{margin:0;color:#555}
+.body .cd{margin:6px 0 2px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;letter-spacing:.02em;word-break:break-all}
+.body .tm{margin:0;color:#666;font-size:.85rem}
+.body .act{margin-top:6px}
+.body .act button{padding:4px 10px;font-size:.85rem}
+
+/* 표 */
+.tablebox{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{background:#faf8f2}
+td.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem;word-break:break-all}
+.tag{display:inline-block;padding:1px 9px;border-radius:99px;font-size:.85rem;font-weight:700}
+.tag.used{background:#e8e8e8;color:#555}.tag.new{background:#dff3ea;color:var(--ok)}
+.empty{text-align:center;color:#888;padding:28px;grid-column:1/-1}
+.print-head{display:none}
+
+@media print{
+  @page{size:A4;margin:10mm}
+  body{background:#fff;font-size:10.5pt}
+  .noprint{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .print-head{display:block;margin-bottom:8px}
+  .print-head h1{font-size:16pt}
+  .print-head p{margin:2px 0;color:#333}
+  .tickets{grid-template-columns:1fr 1fr;gap:5mm 4mm}
+  .tk{break-inside:avoid;--stub:25mm}
+  .tk-in{min-height:31mm}
+  .body{padding:2.5mm 3.5mm}
+  .stub b{font-size:15pt}
+  .tablebox{border:0;overflow:visible}
+  table{min-width:0;font-size:10pt}
+  th,td{border:1px solid #555;padding:4px 6px}
+  th{background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  thead{display:table-header-group}
+  tr{break-inside:avoid}
+  .tag{background:none!important;padding:0;border:0;color:#000!important}
+}
+[hidden]{display:none!important}
