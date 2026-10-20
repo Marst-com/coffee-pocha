@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<script>
+// /admin (끝 슬래시 없음)으로 열어도 css/js 를 올바른 폴더에서 불러오게 경로를 직접 계산
+window.__ADMIN_BASE=(function(){var p=location.pathname;return(/\/$/.test(p)||/\.html?$/.test(p))?p.replace(/[^\/]*$/,''):p+'/';})();
+(function(){var l=document.createElement('link');l.rel='stylesheet';l.href=window.__ADMIN_BASE+'admin.css';document.head.appendChild(l);})();
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>방명록 관리</title>
+</head>
+<body>
+<div class="wrap">
+  <section id="gate" class="gate noprint">
+    <h1>관리자</h1>
+    <form id="gf">
+      <input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN" aria-label="PIN">
+      <p class="err" id="gerr" role="alert"></p>
+      <button class="pri full">들어가기</button>
+    </form>
+  </section>
+
+  <section id="dash" hidden>
+    <div class="noprint">
+      <h1 id="title">방명록 관리</h1>
+      <p class="sub" id="mode"></p>
+      <p class="alert" id="alert" role="alert" hidden></p>
+    </div>
+    <div class="print-head">
+      <h1 id="pTitle"></h1>
+      <p id="pTime"></p><p id="pCond"></p><p id="pSum"></p>
+    </div>
+
+    <div class="stats noprint" id="stats"></div>
+
+    <div class="panel noprint">
+      <div class="row">
+        <select id="fg" aria-label="게임"><option value="all">모든 게임</option></select>
+        <input class="grow" id="fq" placeholder="이름 또는 소감 검색" aria-label="검색">
+      </div>
+      <div class="row tools">
+        <button id="xlsx" type="button">엑셀(.xlsx) 저장</button>
+        <button id="json" type="button">JSON 저장</button>
+        <button id="jcopy" type="button">JSON 복사</button>
+        <button id="csv" type="button">CSV</button>
+        <button id="print" type="button" class="pri">인쇄</button>
+        <button id="delall" type="button" class="danger">현재 조건 전체 삭제</button>
+      </div>
+      <p class="msg" id="msg" role="status"></p>
+    </div>
+
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>#</th><th>이름</th><th>소감</th><th>게임</th><th>점수</th><th>시간</th><th class="noprint">관리</th></tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<dialog id="dlg" aria-labelledby="dTitle">
+  <form id="dForm">
+    <h2 id="dTitle">정말 삭제할까?</h2>
+    <p id="dTxt"></p>
+    <p class="warn">삭제하면 되돌릴 수 없어. 계속하려면 아래에 <b>delete the data</b> 를 그대로 입력해.</p>
+    <input id="dIn" autocomplete="off" spellcheck="false" placeholder="delete the data" aria-label="확인 문구">
+    <div class="row end">
+      <button type="button" id="dNo">취소</button>
+      <button type="submit" id="dOk" class="danger" disabled>삭제</button>
+    </div>
+  </form>
+</dialog>
+<script>
+(function(){var s=document.createElement('script');s.type='module';s.src=window.__ADMIN_BASE+'admin.js';document.body.appendChild(s);})();
+</script>
+</body>
+</html>
